@@ -1,0 +1,50 @@
+<section class="register">
+  <div class="header">
+    <h3>Sign Up</h3>
+    <p>It's quick and easy.</p>
+  </div>
+  <div class="body" >
+    <form #form [formGroup]="formGroup"  (ngSubmit)="SetUserData()">
+      <div class="user-name" >
+        <input name="fristName" formControlName="fristName" [ngClass]="{'invalid': fristName.invalid === true &&  fristName.touched === true ,'valid':fristName.valid}" placeholder="First name" type="text"  class="first-name" />
+        <input name="lastName" formControlName="lastName" [ngClass]="{'invalid': lastName.invalid === true &&  lastName.touched === true ,'valid' : lastName.valid}" placeholder="last name" type="text"  class="last-name"/>
+      </div>
+      <div class="email">
+        <input name="email" formControlName="email" [ngClass]="{'invalid': email.invalid === true &&  email.touched === true ,'valid' : email.valid}" placeholder="email address" name="mail" type="email"/>
+      </div>
+      <div class="password">
+        <input name="password" formControlName="password" [ngClass]="{'invalid': password.invalid === true &&  password.touched === true ,'valid' : password.valid}" placeholder="password" name="pas" type="password" />
+      </div>
+      <div class="heaer-date">
+        Date of birth
+      </div>
+      <div formGroupName="date" class="date" >
+        <select name="day" formControlName="day" [ngClass]="{'invalid': day.invalid === true &&  day.touched === true   ,'valid' : day.valid}"  class="data-birth" >
+          <option> day
+          <option *ngFor="let day of Days()" >{{day}}
+        </select>
+        <select   formControlName="month" [ngClass]="{'invalid': month.invalid === true &&  month.touched === true ,'valid' : month.valid}"  class="data-birth" >
+          <option > month
+          <option *ngFor="let month of months" >{{month}}
+        </select>
+        <select name="year" formControlName="year" [ngClass]="{'invalid': year.invalid === true &&  year.touched === true ,'valid' : year.valid}" class="data-birth" >
+          <option> year
+          <option *ngFor="let year of Years()" >{{year}}
+        </select>
+      </div>
+      <mat-radio-group formControlName="gender"  class="gender" aria-label="Select an option">
+        <div class="gender-container" [ngClass]="{'invalid': gender.invalid === true &&  gender.touched === true ,'valid' : gender.valid && male.checked}">
+          <p>Male</p><mat-radio-button #male name="male" value="Male"></mat-radio-button>
+        </div>
+        <div class="gender-container" [ngClass]="{'invalid': gender.invalid === true &&  gender.touched === true ,'valid' : gender.valid && female.checked}">
+          <p>Female</p><mat-radio-button #female name="female" value="Female"></mat-radio-button>
+        </div>
+      </mat-radio-group>
+      <p>People who use our service may have uploaded your contact information to Facebook. Learn more.</p>
+      <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+      <div class="submit">
+        <button [disabled]="!formGroup.valid"  type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</section>

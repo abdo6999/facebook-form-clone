@@ -1,0 +1,19 @@
+<div class="login-container">
+  <img class="login-img" src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="" srcset=""/>
+  <div class="login-countant">
+    <p class="login-header">Log in to Facebook</p>
+    <form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
+      <div class="login-email">
+        <input  name="email" formControlName="email" class="login-input" type="email"  placeholder="Email address or phone number" >
+      </div>
+      <div class="login-password">
+        <input name="password"  formControlName="password" class="login-input" type="password"  placeholder="password" >
+      </div>
+      <div class="login-sub ">
+        <input class="login-submit" value="log in" [disabled]="loginForm.invalid || loginForm.pending" type="submit">
+      </div>
+    </form>
+    <a class="login-link" href="#" >Forgotten account?</a>
+    <button  mat-button (click)="openRegister()">creat a new account</button>
+  </div>
+</div>

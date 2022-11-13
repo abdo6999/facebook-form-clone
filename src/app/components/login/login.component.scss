@@ -1,0 +1,152 @@
+::ng-deep .cdk-overlay-dark-backdrop {
+    background:  rgba(255, 255, 255, .8);
+  }
+::ng-deep .my-custom-dialog-class {
+  .mat-dialog-container {
+    padding: 0;
+    border-radius: 8px;
+  }
+}
+
+
+.login {
+  &-container,
+  &-countant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-container {
+    background-color: #f0f2f5;
+    padding-top: 80px;
+    height: 100vh;
+  }
+  &-img {
+    width: 240px;
+    margin: -44px 0 -4px 0;
+  }
+  &-countant {
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    width: 28.7%;
+    border-radius: 8px;
+    border: 1px solid #dddfe2;
+    height: 376px;
+    margin-top: 10px;
+    padding: 10px 16px 20px 16px;
+    max-width: 350px;
+
+    & button {
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      line-height: 48px;
+      padding: 0 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #42b72a;
+      &:hover {
+        background-color: #36a420;
+        border-color: #36a420;
+      }
+    }
+  }
+  &-header {
+    font-size: 18px;
+    margin: 0;
+    padding: 24px 0 16px 0;
+    color: #1877f2;
+  }
+  &-form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  &-email, 
+  &-password{
+    padding: 6px 0;
+    width: 100%;
+    max-width: 100% ;
+  }
+  &-input {
+    border-radius: 6px;
+    width: 100%;
+    height: 48px;
+    font-size: 17px;
+    padding: 14px 16px;
+    border: 1px solid #ccd0d5;
+    &:focus-visible {
+      outline: none;
+    }
+
+  }
+
+
+  &-sub {
+    padding: 6px 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  &-submit {
+    border-radius: 6px;
+    width:100%;
+    height: 48px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #1877f2;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    &:hover {
+      background-color: #166fe5
+    }
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  &-link {
+    text-decoration:none;
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 20px 0 ;
+    
+  }
+  
+
+}
+/* Portrait tablets and small desktops */
+ @media (min-width: 768px) and (max-width: 991px) {
+   .login-countant {
+     width:38% ;
+   }
+ }
+
+/* Landscape phones and portrait tablets */
+
+ @media (max-width: 767px) {
+   .login-countant {
+     width:56% ;
+   }
+ }
+ @media (min-width: 600px) and (max-width: 767px) {
+   .login-countant {
+     width:42% ;
+   }
+ }
+
+ /* Portrait phones and smaller */
+ @media (max-width: 480px) {
+   .login-countant {
+     width:70% ;
+   }
+ }
+ @media (max-width: 300px) {
+   .login-countant {
+     width:80% ;
+   }
+ }
